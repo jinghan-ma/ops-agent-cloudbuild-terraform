@@ -6,7 +6,7 @@ provider "google" {
 resource "google_project" "codelab_project" {
   project_id      = "oss-terraform-jinghanma"
   name            = "oss-terraform-jinghanma"
-  billing_account = "01BBAF-2389A4-04CA3B"
+  billing_account = "************"
 
   # This is the ID for /experimental, see go/experimental-folder.
   # In particular, please accept go/experimental-folder#tos.
