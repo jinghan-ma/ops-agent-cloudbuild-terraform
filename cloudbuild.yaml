@@ -6,6 +6,5 @@ steps:
     script: |
       #!/bin/bash
       set -e
-      source /workspace/lib/bash_utils.sh
-      tf_install_in_cloud_build_step
-      tf_apply
+      terraform plan
+      terraform apply
