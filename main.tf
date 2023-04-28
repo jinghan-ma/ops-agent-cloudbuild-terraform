@@ -12,7 +12,7 @@ resource "google_project" "codelab_project" {
   # In particular, please accept go/experimental-folder#tos.
   # If you are not eligible for creating a project, ask a fellow engineer
   # and see go/terraform-codelab#import-existing-project for importing it.
-  folder_id = "569848373921"
+  folder_id = "********"
 
   lifecycle {
     # Stop any terraform plan which would destroy this GCP project.
