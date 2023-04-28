@@ -1,6 +1,6 @@
 steps:
   - id: run-terraform-apply
-    name: 'hashicorp/terraform:1.4.5'
+    name: 'hashicorp/terraform'
     env:
       - "PROJECT_ID=oss-terraform-jinghanma"
     script: |
