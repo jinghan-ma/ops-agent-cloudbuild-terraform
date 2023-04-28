@@ -1,11 +1,11 @@
 provider "google" {
-  project     =  "codelab-terraform-jinghanma"
+  project     =  "oss-terraform-jinghanma"
   region      = "us-central1"
 }
 
 resource "google_project" "codelab_project" {
-  project_id      = "codelab-terraform-jinghanma"
-  name            = "codelab-terraform-jinghanma"
+  project_id      = "oss-terraform-jinghanma"
+  name            = "oss-terraform-jinghanma"
   billing_account = "01BBAF-2389A4-04CA3B"
 
   # This is the ID for /experimental, see go/experimental-folder.
@@ -39,7 +39,7 @@ resource "google_compute_instance" "vm_instance_public" {
   machine_type = "e2-small"
   zone         = "us-central1-a"
   tags         = ["rhel"]
-  project      = "codelab-terraform-jinghanma"
+  project      = google_project.codelab_project.project_id
   network_interface {
     network = "default"
 
@@ -58,7 +58,7 @@ module "rhel_agent_policy" {
   source     = "terraform-google-modules/cloud-operations/google//modules/agent-policy"
   version    = "0.2.4"
 
-  project_id =  "codelab-terraform-jinghanma"
+  project_id = google_project.codelab_project.project_id
   policy_id  = "rhel-ops-agents-policy"
   agent_rules = [
     {
