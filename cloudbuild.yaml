@@ -1,6 +1,6 @@
 steps:
   - id: run-terraform-apply
-    name: "gcr.io/cloud-builders/gcloud"
+    name: "ubuntu"
     env:
       - "PROJECT_ID=oss-terraform-jinghanma"
     script: |
